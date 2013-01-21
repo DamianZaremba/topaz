@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 // TODO:
-// * Add threading to GatherStats
+// * Add threading to GatherStats maybe
 
 public class Topaz {
     public static void Main() {
@@ -37,6 +37,7 @@ public class Topaz {
 
         for(int i=0; i < steps; i++) {
             Console.WriteLine("Loop2");
+            Console.WriteLine(UnixTime());
             // Get the stats
             List<string> stats = GatherStats();
 
@@ -46,6 +47,7 @@ public class Topaz {
             }
 
             // Sleep for 10 seconds
+            Console.WriteLine(UnixTime());
             System.Threading.Thread.Sleep(collect_time);
         }
 
@@ -84,6 +86,9 @@ public class Topaz {
     }
 
     public static List<string> RunModule(string module_path) {
+        Console.WriteLine(UnixTime());
+        Console.WriteLine("Running " + module_path);
+
         // Execute a powershell module
         List<string> module_buffer = new List<string>();
 
