@@ -16,3 +16,8 @@ The ArrayList should contain the metric name and value seperated by a single spa
 How it's suppose to work
 -------------------------
 Threaded c# binary that loops over each powershell module in the collectors folder, runs them and dumps the data to graphite in a loop.
+
+TODO
+----
+
+* Make collectors pull the stats table once then process it
